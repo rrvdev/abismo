@@ -1,6 +1,6 @@
 # Credits
 
-Everything below can be redistributed with the game. (A Portuguese version with the full
+Everything below can be redistributed with the game (*Abismo: One More Minute*). (A Portuguese version with the full
 file-by-file tables lives in `CREDITOS.md`.)
 
 ## Fonts
@@ -36,7 +36,7 @@ Sounds, Interface Sounds, Digital Audio and Music Jingles. Four effects (bow str
 whoosh, coin, dodge) were synthesized for Abismo.
 
 **Music** — **Juhani Junkala**, license **CC0** (OpenGameArt): *Chiptune Adventures* (Stage
-Select, Stage 1, Stage 2, Boss Fight) and *Retro Game Music Pack* (Level 1, Level 2, Ending).
+Select, Stage 1, Stage 2, Boss Fight) and *Retro Game Music Pack* (Level 1, Level 2, Level 3, Ending).
 <https://opengameart.org/content/4-chiptunes-adventure> ·
 <https://opengameart.org/content/5-chiptunes-action>
 
@@ -61,6 +61,22 @@ Select, Stage 1, Stage 2, Boss Fight) and *Retro Game Music Pack* (Level 1, Leve
 > NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
 > DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Co-op in the .exe
+
+**WebRTC plugin for Godot** (`godotengine/webrtc-native` 1.2.1) — MIT license. It lets the `.exe`
+play together over the internet with the same room code as the browser. It ships in the Windows
+package as `libwebrtc_native.windows.template_release.x86_64.dll`, next to `Abismo.exe`, together
+with its libraries, each under its own license (the texts are in the package's `licencas-webrtc/`
+folder and in `addons/webrtc_native/` in the project):
+
+| Library | License |
+|---|---|
+| webrtc-native | MIT |
+| libdatachannel, libjuice | Mozilla Public License 2.0 — source code at <https://github.com/paullouisageneau/libdatachannel> and <https://github.com/paullouisageneau/libjuice> |
+| Mbed TLS | Apache 2.0 |
+| usrsctp, libSRTP | 3-clause BSD |
+| plog | MIT |
 
 ## The genre
 

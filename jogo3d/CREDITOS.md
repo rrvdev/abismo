@@ -1,6 +1,7 @@
 # Créditos
 
-Tudo aqui pode ser distribuído junto com o jogo. Isso foi checado antes de cada escolha —
+Tudo aqui pode ser distribuído junto com o jogo (*Abismo: Só Mais Um Minuto* — em inglês,
+*Abismo: One More Minute*). Isso foi checado antes de cada escolha —
 é o tipo de coisa que não atrapalha enquanto você desenvolve e explode no dia do lançamento.
 
 ---
@@ -46,9 +47,10 @@ e rode `tools/build_frames.gd`.
 **KayKit Adventurers 2.0 (FREE)** — por **Kay Lousberg**
 <https://kaylousberg.itch.io/kaykit-adventurers>
 
-Licença: **CC0** (domínio público). Os cinco heróis do jogo em 3D (Knight, Rogue, Mage, Barbarian,
-Rogue_Hooded), as animações do Rig_Medium e as armas na mão (espada, arco, cajado, machado,
-adaga). Cópia em `jogo3d/arte/kaykit/`, com a licença (`LICENSE-KayKit.txt`); o pacote completo
+Licença: **CC0** (domínio público). Os sete heróis do jogo em 3D (Knight, Rogue — também a
+Sacerdotisa, recolorida —, Mage, Barbarian, Rogue_Hooded e Ranger, o Granadeiro), as animações do
+Rig_Medium e as coisas na mão (espada, arco, cajado, machado, adaga, o livro aberto
+`spellbook_open` e a granada `smokebomb`). Cópia em `jogo3d/arte/kaykit/`, com a licença (`LICENSE-KayKit.txt`); o pacote completo
 fica em `referencias/`, fora do jogo. Os inimigos, o cenário, as moedas, os baús e os efeitos do
 jogo em 3D foram modelados em código para o Abismo (`jogo3d/`).
 
@@ -61,6 +63,8 @@ jogo em 3D foram modelados em código para o Abismo (`jogo3d/`).
 | `art/player/mago_idle/run_f0..f3.png`, `mago_hit_f0.png` | `wizzard_m_idle/run_anim_f0..f3.png`, `wizzard_m_hit_anim_f0.png` | Feiticeiro |
 | `art/player/anao_idle/run_f0..f3.png`, `anao_hit_f0.png` | `dwarf_m_idle/run_anim_f0..f3.png`, `dwarf_m_hit_anim_f0.png` | Anão |
 | `art/player/lagarto_idle/run_f0..f3.png`, `lagarto_hit_f0.png` | `lizard_m_idle/run_anim_f0..f3.png`, `lizard_m_hit_anim_f0.png` | Lagarto |
+| `art/player/sacerdotisa_idle/run_f0..f3.png`, `sacerdotisa_hit_f0.png` | `wizzard_f_idle/run_anim_f0..f3.png`, `wizzard_f_hit_anim_f0.png` | Sacerdotisa |
+| `art/player/granadeiro_idle/run_f0..f3.png`, `granadeiro_hit_f0.png` | `elf_m_idle/run_anim_f0..f3.png`, `elf_m_hit_anim_f0.png` | Granadeiro |
 | `art/enemies/slug_idle_f0..f3.png` | `slug_anim_f0..f3.png` | lesma |
 | `art/enemies/skelet_idle/run_f0..f3.png` | `skelet_idle/run_anim_f0..f3.png` | esqueleto arqueiro |
 | `art/enemies/orc_idle/run_f0..f3.png` | `orc_warrior_idle/run_anim_f0..f3.png` | orc (entra aos 3:30) |
@@ -80,8 +84,8 @@ jogo em 3D foram modelados em código para o Abismo (`jogo3d/`).
 O `hit` é um quadro só: o herói jogado para trás, com os pés fora do chão. O jogo mostra ele
 quando você leva um golpe.
 
-Os cinco personagens têm 16×28 e 4 quadros por animação — por isso o mesmo gerador
-(`tools/build_frames.gd`) monta os cinco sem nenhum caso especial. Os inimigos variam de 16×16
+Os sete personagens têm 16×28 e 4 quadros por animação — por isso o mesmo gerador
+(`tools/build_frames.gd`) monta os sete sem nenhum caso especial. Os inimigos variam de 16×16
 (slug) a 32×36 (ogro, demônio e troll), e o necromante (16×23) vai em escala 4; quem cuida do alinhamento dos pés é o `foot_y` de cada cena,
 não o gerador.
 
@@ -209,6 +213,7 @@ arquivo foi renomeado para o efeito que ele faz no jogo — a tabela de origem e
 | `audio/musica/chefe.ogg` | *Chiptune Adventures* — 3. Boss Fight |
 | `audio/musica/salao.ogg` | *Retro Game Music Pack* — Level 1 (convertida de WAV para OGG) |
 | `audio/musica/cemiterio.ogg` | *Retro Game Music Pack* — Level 2 (convertida de WAV para OGG) |
+| `audio/musica/geleira.ogg` | *Retro Game Music Pack* — Level 3 (convertida de WAV para OGG) |
 | `audio/musica/vitoria.ogg` | *Retro Game Music Pack* — Ending (convertida de WAV para OGG) |
 
 <https://opengameart.org/content/4-chiptunes-adventure> ·
@@ -236,10 +241,26 @@ arquivo foi renomeado para o efeito que ele faz no jogo — a tabela de origem e
 > DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 > OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+## O jogar junto no .exe
+
+**WebRTC plugin for Godot** (`godotengine/webrtc-native` 1.2.1) — licença MIT. É o que deixa o
+`.exe` jogar junto pela internet com o mesmo código de sala do navegador. Vai no pacote do Windows
+como `libwebrtc_native.windows.template_release.x86_64.dll`, ao lado do `Abismo.exe`, e leva junto
+as bibliotecas dele, cada uma com a sua licença (os textos estão na pasta `licencas-webrtc/` do
+pacote e em `addons/webrtc_native/` no projeto):
+
+| Biblioteca | Licença |
+|---|---|
+| webrtc-native | MIT |
+| libdatachannel, libjuice | Mozilla Public License 2.0 — o código-fonte está em <https://github.com/paullouisageneau/libdatachannel> e <https://github.com/paullouisageneau/libjuice> |
+| Mbed TLS | Apache 2.0 |
+| usrsctp, libSRTP | BSD de 3 cláusulas |
+| plog | MIT |
+
 ## Serviços usados no jogar junto
 
-Não fazem parte do jogo (nada deles vai no pacote), mas o jogar junto pelo navegador depende deles
-pra dois computadores se acharem:
+Não fazem parte do jogo (nada deles vai no pacote), mas o jogar junto (no navegador e no `.exe`)
+depende deles pra dois computadores se acharem:
 
 | Serviço | Pra quê |
 |---|---|
